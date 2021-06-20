@@ -6,29 +6,21 @@ namespace GenericProblems
 {
     public class MaximumNumber
     {
-        public static void ToPrint(int[] inputArray)
+        public int MaximumIntegerNumber(int firstValue, int secondValue, int thirdValue)
         {
-            foreach(int element in inputArray)
+            if (firstValue.CompareTo(secondValue) > 0 && firstValue.CompareTo(thirdValue) > 0)
             {
-                Console.WriteLine(element);
+                return firstValue;
             }
-            Console.WriteLine("-----------------");
-        }
-        public static void ToPrint(double[] inputArray)
-        {
-            foreach(double element in inputArray)
+            if (secondValue.CompareTo(firstValue) > 0 && secondValue.CompareTo(thirdValue) > 0)
             {
-                Console.WriteLine(element);
+                return secondValue;
             }
-            Console.WriteLine("-----------------");
-        }
-        public static void ToPrint(char[] inputArray)
-        {
-            foreach(char element in inputArray)
+            if (thirdValue.CompareTo(firstValue) > 0 && thirdValue.CompareTo(secondValue) > 0)
             {
-                Console.WriteLine(element);
+                return thirdValue;
             }
-            Console.WriteLine("---------------");
+            return firstValue;
         }
     }
 }

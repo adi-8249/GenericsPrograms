@@ -72,5 +72,34 @@ namespace MaxTest1.Test
             float actual = find.MaximumFloatNumber(firstValue, secondValue, thirdValue);
             Assert.AreEqual(expected, actual);
         }
+        [Test]
+        //TestCase 3.1
+        public void Maximum_String_Value_PassedAt_First_Parameter_Should_Return_Maximum_Value()
+        {
+            string firstValue = "Tiger", secondValue = "Elephant", thirdValue = "Cow";
+            string expected = "Tiger";
+            MaximumNumber find = new MaximumNumber();
+            string actual = find.MaximumStringNumber(firstValue, secondValue, thirdValue);
+            Assert.AreEqual(expected, actual);
+        }
+        [Test]
+        //TestCase 3.2
+        public void Maximum_String_Value_PassedAt_Second_Parameter_Should_Return_Maximum_Value()
+        {
+            string firstValue = "Elephant", secondValue = "Tiger", thirdValue = "Cow";
+            string expected = "Tiger";
+            MaximumNumber find = new MaximumNumber();
+            string actual = find.MaximumStringNumber(firstValue, secondValue, thirdValue);
+            Assert.AreEqual(expected, actual);
+        }
+        [Test]
+        public void Maximum_String_Value_PassedAt_Third_Parameter_Should_Return_Maximum_Value()
+        {
+            string firstValue = "Cow", secondValue = "Elephant", thirdValue = "Tiger";
+            string expected = "Tiger";
+            MaximumNumber find = new MaximumNumber();
+            string actual = find.MaximumStringNumber(firstValue, secondValue, thirdValue);
+            Assert.AreEqual(expected, actual);
+        }
     }
 }

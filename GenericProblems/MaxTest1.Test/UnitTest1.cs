@@ -183,5 +183,48 @@ namespace MaxTest1.Test
             Assert.AreEqual(expected, result);
         }
 
+        //UC4-Test case
+        [Test]
+        public void Passing_Integer_Array_Should_Return_Maximum_Value()
+        {
+            //Arrange
+            int[] intArray = { 50, 70, 65, 90, 80 };
+            int expected = 90;
+            //Act
+            FindMax<int> find = new FindMax<int>(intArray);
+            int actual = find.FindMaxValue();
+            //Assert
+            Assert.AreEqual(expected, actual);
+            Assert.Pass();
+        }
+        [Test]
+        public void Passing_float_Array_Should_Return_Maximum_Value()
+        {
+            float[] floatArray = { 30.5f, 20.5f, 10.5f, 35.5f, 50.5f };
+            float expected = 50.5f;
+            FindMax<float> find = new FindMax<float>(floatArray);
+            float actual = find.FindMaxValue();
+            Assert.AreEqual(expected, actual);
+        }
+        [Test]
+        public void Passing_double_Array_Should_Return_Maximum_Value()
+        {
+            double[] doubleArray = { 60.50, 30.56, 25.00, 65.95 };
+            double expected = 65.95;
+            FindMax<double> find = new FindMax<double>(doubleArray);
+            double actual = find.FindMaxValue();
+            Assert.AreEqual(expected, actual);
+        }
+        [Test]
+        public void Passing_string_Array_Should_Return_Maximum_Value()
+        {
+            string[] strArray = { "Tiger", "Roar", "Cow", "Bark", "Dog" };
+            string expected = "Tiger";
+            FindMax<string> find = new FindMax<string>(strArray);
+            string actual = find.FindMaxValue();
+            Assert.AreEqual(expected, actual);
+        }
+
+
     }
 }

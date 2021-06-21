@@ -118,6 +118,25 @@ namespace GenericProblems
         }
 
     }
+    //UC4-Extending max to take more three parameters
+    public class FindMax<dataType> where dataType : IComparable
+    {
+        public dataType[] array;
+        public FindMax(dataType[] array)
+        {
+            this.array = array;
+        }
+        public dataType[] Sort(dataType[] values)
+        {
+            Array.Sort(values);
+            return values;
+        }
+        public dataType FindMaxValue()
+        {
+            dataType[] sortedArray = Sort(this.array);
+            return sortedArray[sortedArray.Length - 1];
+        }
+    }
 }
     
 

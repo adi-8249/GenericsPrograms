@@ -58,6 +58,7 @@ namespace GenericProblems
             return firstString;
         }
         //Refactor1
+        //Refactoring all into one generic method
         public static T MaxValue<T>(T firstValue, T secondValue, T thirdValue)
         {
             if (Comparer<T>.Default.Compare(firstValue, secondValue) > 0 && Comparer<T>.Default.Compare(firstValue, thirdValue) > 0 ||
@@ -81,4 +82,42 @@ namespace GenericProblems
             return default;
         }
     }
+    //Refactor-2
+    //creating generic class and taking three generic value 
+    public class GenericMaximum<T> where T : IComparable
+    {
+        public T firstValue; T secondValue; T thirdValue;
+        public GenericMaximum(T firstValue, T secondValue, T thirdValue)
+        {
+            this.firstValue = firstValue;
+            this.secondValue = secondValue;
+            this.thirdValue = thirdValue;
+
+        }
+        public static T MaxValue(T firstValue, T secondValue, T thirdValue)
+        {
+            if (Comparer<T>.Default.Compare(firstValue, secondValue) > 0 && Comparer<T>.Default.Compare(firstValue, thirdValue) > 0 ||
+           Comparer<T>.Default.Compare(firstValue, secondValue) > 0 && Comparer<T>.Default.Compare(firstValue, thirdValue) > 0 ||
+           Comparer<T>.Default.Compare(firstValue, secondValue) > 0 && Comparer<T>.Default.Compare(firstValue, thirdValue) > 0)
+            {
+                return firstValue;
+            }
+            if (Comparer<T>.Default.Compare(secondValue, firstValue) > 0 && Comparer<T>.Default.Compare(secondValue, thirdValue) > 0 ||
+           Comparer<T>.Default.Compare(secondValue, firstValue) > 0 && Comparer<T>.Default.Compare(secondValue, thirdValue) > 0 ||
+           Comparer<T>.Default.Compare(secondValue, firstValue) > 0 && Comparer<T>.Default.Compare(secondValue, thirdValue) > 0)
+            {
+                return secondValue;
+            }
+            if (Comparer<T>.Default.Compare(thirdValue, firstValue) > 0 && Comparer<T>.Default.Compare(thirdValue, secondValue) > 0 ||
+          Comparer<T>.Default.Compare(thirdValue, firstValue) > 0 && Comparer<T>.Default.Compare(thirdValue, secondValue) > 0 ||
+          Comparer<T>.Default.Compare(thirdValue, firstValue) > 0 && Comparer<T>.Default.Compare(thirdValue, secondValue) > 0)
+            {
+                return thirdValue;
+            }
+            return default;
+        }
+
+    }
 }
+    
+

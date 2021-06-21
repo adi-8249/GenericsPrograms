@@ -114,7 +114,7 @@ namespace MaxTest1.Test
         //End of Testcases for string
 
         [Test]
-
+        //Refactor1 TestCases
         public void MaximumInt_ValueAt_FirstParameter_Return_Highest_value()
         {
             //Arrange
@@ -147,5 +147,41 @@ namespace MaxTest1.Test
             //Assert
             Assert.AreEqual(expected, result);
         }
+        //End of Refactor1
+        [Test]
+        //Refactor-2 Test cases
+        public void MaxInt_ValueAt_FirstParameter_Return_Highest_value()
+        {
+            //Arrange
+            int firstValue = 30, secondValue = 20, thirdValue = 10;
+            int expected = 30;
+            //Act
+            int result = GenericMaximum<int>.MaxValue(firstValue, secondValue, thirdValue);
+            //Assert
+            Assert.AreEqual(expected, result);
+        }
+        [Test]
+        public void MaxFloat_ValueAt_FirstParameter_Return_Highest_value()
+        {
+            //Arrange
+            float firstValue = 30.5f, secondValue = 20.5f, thirdValue = 10.5f;
+            float expected = 30.50f;
+            //Act
+            float result = GenericMaximum<float>.MaxValue(firstValue, secondValue, thirdValue);
+            //Assert
+            Assert.AreEqual(expected, result);
+        }
+        [Test]
+        public void MaxString_ValueAt_FirstParameter_Return_Highest_value()
+        {
+            //Arrange
+            string firstValue = "Tiger", secondValue = "Elephant", thirdValue = "Cow";
+            string expected = "Tiger";
+            //Act
+            string result = GenericMaximum<string>.MaxValue(firstValue, secondValue, thirdValue);
+            //Assert
+            Assert.AreEqual(expected, result);
+        }
+
     }
 }

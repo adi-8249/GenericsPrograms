@@ -6,6 +6,7 @@ namespace GenericProblems
 {
     public class MaximumNumber
     {
+        //UC1-maximum number for integer value
         public int MaximumIntegerNumber(int firstValue, int secondValue, int thirdValue)
         {
             if (firstValue.CompareTo(secondValue) > 0 && firstValue.CompareTo(thirdValue) > 0)
@@ -22,6 +23,7 @@ namespace GenericProblems
             }
             return firstValue;
         }
+        //UC2-maximum number for float value
         public float MaximumFloatNumber(float firstValue, float secondValue, float thirdValue)
         {
             if (firstValue.CompareTo(secondValue) > 0 && firstValue.CompareTo(thirdValue) > 0)
@@ -38,6 +40,7 @@ namespace GenericProblems
             }
             return firstValue;
         }
+        //UC3-Maximum for string value
         public string MaximumStringNumber(string firstString, string secondString, string thirdString)
         {
             if (firstString.CompareTo(secondString) > 0 && firstString.CompareTo(thirdString) > 0)
@@ -53,6 +56,29 @@ namespace GenericProblems
                 return thirdString;
             }
             return firstString;
+        }
+        //Refactor1
+        public static T MaxValue<T>(T firstValue, T secondValue, T thirdValue)
+        {
+            if (Comparer<T>.Default.Compare(firstValue, secondValue) > 0 && Comparer<T>.Default.Compare(firstValue, thirdValue) > 0 ||
+           Comparer<T>.Default.Compare(firstValue, secondValue) > 0 && Comparer<T>.Default.Compare(firstValue, thirdValue) > 0 ||
+           Comparer<T>.Default.Compare(firstValue, secondValue) > 0 && Comparer<T>.Default.Compare(firstValue, thirdValue) > 0)
+            {
+                return firstValue;
+            }
+            if (Comparer<T>.Default.Compare(secondValue, firstValue) > 0 && Comparer<T>.Default.Compare(secondValue, thirdValue) > 0 ||
+           Comparer<T>.Default.Compare(secondValue, firstValue) > 0 && Comparer<T>.Default.Compare(secondValue, thirdValue) > 0 ||
+           Comparer<T>.Default.Compare(secondValue, firstValue) > 0 && Comparer<T>.Default.Compare(secondValue, thirdValue) > 0)
+            {
+                return secondValue;
+            }
+            if (Comparer<T>.Default.Compare(thirdValue, firstValue) > 0 && Comparer<T>.Default.Compare(thirdValue, secondValue) > 0 ||
+          Comparer<T>.Default.Compare(thirdValue, firstValue) > 0 && Comparer<T>.Default.Compare(thirdValue, secondValue) > 0 ||
+          Comparer<T>.Default.Compare(thirdValue, firstValue) > 0 && Comparer<T>.Default.Compare(thirdValue, secondValue) > 0)
+            {
+                return thirdValue;
+            }
+            return default;
         }
     }
 }
